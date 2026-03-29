@@ -112,7 +112,7 @@ namespace PRoConEvents
 
         public String GetPluginAuthor()
         {
-            return "onegrizzlybeer";
+            return "onegrizzlybeer (maintained by Prophet731)";
         }
 
         public String GetPluginWebsite()
