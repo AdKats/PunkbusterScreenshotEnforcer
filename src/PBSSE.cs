@@ -360,7 +360,7 @@ This file may get very big and slow your procon down. Only use it to log errors 
 
             if (strVariable.CompareTo("Whitelist") == 0)
             {
-                this.whitelist = new List<String>(strValue.Split(new char[] { '|' }));
+                this.whitelist = new List<String>(strValue.Split(new Char[] { '|' }));
             }
             else if (strVariable.CompareTo("Exclude players that have the same ip from check") == 0 && Enum.IsDefined(typeof(enumBoolYesNo), strValue))
             {
@@ -463,7 +463,7 @@ This file may get very big and slow your procon down. Only use it to log errors 
             else if (strVariable.CompareTo("Enable ingame notification") == 0 && Enum.IsDefined(typeof(enumBoolYesNo), strValue))
                 this.enableingamenotify = (enumBoolYesNo)Enum.Parse(typeof(enumBoolYesNo), strValue);
             else if (strVariable.CompareTo("Ingame username") == 0)
-                this.ingameaccountname = new List<String>(strValue.Split(new char[] { '|' }));
+                this.ingameaccountname = new List<String>(strValue.Split(new Char[] { '|' }));
             else if (strVariable.CompareTo("Time to display (sec)") == 0 && Int32.TryParse(strValue, out outvalue))
             {
                 this.ingamenotifytime = outvalue;
