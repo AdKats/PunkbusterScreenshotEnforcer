@@ -16,8 +16,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Text;
+
+using Flurl.Http;
 
 using PRoCon.Core;
 using PRoCon.Core.Players;
@@ -525,8 +526,7 @@ This file may get very big and slow your procon down. Only use it to log errors 
                     DateTime updatehelper = lastupdatecheck.AddHours(3);
                     if (DateTime.Compare(updatehelper, DateTime.Now) <= 0)
                     {
-                        WebClient wc = new WebClient();
-                        String latestversion = wc.DownloadString("https://forum.myrcon.com/showthread.php?5202");
+                        String latestversion = "https://forum.myrcon.com/showthread.php?5202".GetStringAsync().Result;
 
                         latestversion = latestversion.Substring(latestversion.IndexOf("<title>") + 7);
                         latestversion = latestversion.Substring(0, latestversion.IndexOf("</title>"));
