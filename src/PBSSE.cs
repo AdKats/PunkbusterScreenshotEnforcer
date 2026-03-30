@@ -971,7 +971,7 @@ This file may get very big and slow your procon down. Only use it to log errors 
                 {
                     try
                     {
-                        String file = Path.Combine(Directory.GetParent(Application.ExecutablePath).FullName, this.logfilename);
+                        String file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, this.logfilename);
 
                         if (!File.Exists(file))
                             File.Create(file);
